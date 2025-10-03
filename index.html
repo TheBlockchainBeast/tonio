@@ -3,45 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tonio - Official Ton Mascot</title>
+  <title>Tonio - Official Ton Mascot 🚀</title>
   <link rel="icon" type="image/png" href="assets/tonio.png">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Fun Loader -->
   <div id="loader" class="loader">
     <div class="loader-content">
-      <div class="loader-mascot">🚀</div>
+      <div class="loader-mascot"><img src="/assets/tonio.png" width="200" height="200" alt=""></div>
       <div class="loader-text">Loading Tonio...</div>
       <div class="loader-bar">
         <div class="loader-progress"></div>
       </div>
-      <div class="loader-memes">
-        <span>🎭</span>
-        <span>😂</span>
-        <span>🤪</span>
-        <span>🎉</span>
-      </div>
     </div>
   </div>
 
-  <!-- Fun Background Particles -->
-  <div id="particles"></div>
 
   <!-- Hero Section -->
   <header class="hero">
-    <img src="assets/banner.png" alt="Tonio Banner" class="banner-bg">
+    <div class="hero-background">
+      <!-- Floating Background Elements -->
+      <div class="bg-element"></div>
+      <div class="bg-element"></div>
+      
+      <!-- Geometric Shapes -->
+      <div class="geometric-shape"></div>
+      <div class="geometric-shape"></div>
+      
+      <!-- Animated Grid -->
+      <div class="grid-lines"></div>
+      
+      <!-- Energy Orbs -->
+      <div class="energy-orb"></div>
+      <div class="energy-orb"></div>
+    </div>
     <div class="hero-content">
-      <img src="assets/tonio.png" alt="Tonio Mascot" class="tonio-mascot" id="tonio-mascot">
-      <div class="hero-text">
-        <h1>Tonio</h1>
-        <h2>Official Ton Mascot</h2>
-        <p class="hero-subtitle">The funniest mascot in crypto! 🚀</p>
+      <div class="hero-left">
+        <div class="hero-badge">
+          <i class="fas fa-rocket"></i>
+          <span>Official TON Mascot</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line-1">Meet</span>
+          <span class="title-line-2">Tonio</span>
+          <span class="title-line-3">The Meme King</span>
+        </h1>
+        <p class="hero-description">
+          The funniest, most chaotic mascot in the entire crypto universe! 
+          <br>Making TON community the most entertaining place to be! 🚀
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">Epic Memes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Dank Vibes</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Chad Energy</span>
+          </div>
+        </div>
         <div class="hero-buttons">
-          <button id="random-meme-btn" class="btn">🎲 Random Meme</button>
-          <button id="tonio-dance-btn" class="btn">💃 Make Tonio Dance</button>
-          <button id="start-game-btn" class="btn game-btn">🎮 Play Meme Collector</button>
+          <button id="random-meme-btn" class="btn btn-primary">
+            <i class="fas fa-dice"></i>
+            <span>Random Meme</span>
+          </button>
+          <button id="tonio-dance-btn" class="btn btn-secondary">
+            <i class="fas fa-music"></i>
+            <span>Make Tonio Dance</span>
+          </button>
+          <button id="start-game-btn" class="btn btn-accent">
+            <i class="fas fa-gamepad"></i>
+            <span>Play Meme Collector</span>
+          </button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="mascot-container">
+          <img src="assets/tonio.png" alt="Tonio Mascot" class="tonio-mascot" id="tonio-mascot">
+          <div class="mascot-glow"></div>
         </div>
       </div>
     </div>
@@ -54,69 +100,133 @@
     <!-- Meme Gallery -->
     <section class="meme-section">
       <div class="section-header">
-        <h2>🎭 Tonio's Meme Collection</h2>
-        <p>Click any meme for a surprise! Try to find the hidden ones...</p>
-        <button id="shuffle-memes" class="btn">🔀 Shuffle Memes</button>
+        <div class="section-badge">
+          <i class="fas fa-images"></i>
+          <span>Meme Collection</span>
+        </div>
+        <h2 class="section-title">
+          Tonio's Epic <span class="gradient-text">Meme Vault</span>
+        </h2>
+        <p class="section-description">
+          Click any meme for a surprise! Try to find the hidden legendary ones... 
+          <br>Each meme is handpicked for maximum chaos and entertainment! 🎭
+        </p>
+        <button id="shuffle-memes" class="btn btn-outline">
+          <i class="fas fa-random"></i>
+          <span>Shuffle Memes</span>
+        </button>
       </div>
       <div id="meme-gallery" class="meme-gallery"></div>
     </section>
 
     <!-- Fun Facts Section -->
     <section class="fun-facts">
-      <h2>🤪 Fun Facts About Tonio</h2>
+      <div class="section-header">
+        <div class="section-badge">
+          <i class="fas fa-star"></i>
+          <span>Fun Facts</span>
+        </div>
+        <h2 class="section-title">
+          Tonio's <span class="gradient-text">Epic Stats</span>
+        </h2>
+      </div>
       <div class="facts-grid">
         <div class="fact-card">
-          <h3>🎯 Mission</h3>
-          <p>To make the TON community the funniest in crypto!</p>
+          <div class="fact-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Mission</h3>
+          <p>To make the TON community the funniest and most chaotic in all of crypto!</p>
         </div>
         <div class="fact-card">
-          <h3>💪 Superpower</h3>
-          <p>Can turn any FUD into pure comedy gold!</p>
+          <div class="fact-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Superpower</h3>
+          <p>Can turn any FUD into pure comedy gold and make bears cry with laughter!</p>
         </div>
         <div class="fact-card">
-          <h3>🍕 Favorite Food</h3>
-          <p>Pizza (but only if it's shaped like a blockchain)</p>
+          <div class="fact-icon">
+            <i class="fas fa-pizza-slice"></i>
+          </div>
+          <h3>Favorite Food</h3>
+          <p>Pizza (but only if it's shaped like a blockchain and has diamond hands)</p>
         </div>
         <div class="fact-card">
-          <h3>🎵 Theme Song</h3>
-          <p>"To the moon and beyond!" (sung terribly)</p>
+          <div class="fact-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <h3>Theme Song</h3>
+          <p>"To the moon and beyond!" (sung terribly but with maximum confidence)</p>
         </div>
       </div>
     </section>
 
     <!-- Community Section -->
     <section class="community-section">
-      <h2>🚀 Join the Fun!</h2>
-      <p>Be part of the most entertaining crypto community ever!</p>
+      <div class="section-header">
+        <div class="section-badge">
+          <i class="fas fa-users"></i>
+          <span>Community</span>
+        </div>
+        <h2 class="section-title">
+          Join the <span class="gradient-text">Chaos</span>
+        </h2>
+        <p class="section-description">
+          Be part of the most entertaining, chaotic, and absolutely legendary crypto community ever!
+          <br>Where memes meet money and magic happens! 🚀
+        </p>
+      </div>
       
       <!-- Contract Info -->
       <div class="contract-info">
-        <h3>📋 Contract Details</h3>
+        <div class="contract-header">
+          <i class="fas fa-file-contract"></i>
+          <h3>Contract Details</h3>
+        </div>
         <div class="contract-details">
           <div class="contract-item">
-            <span class="label">Contract Address:</span>
-            <span class="address">EQCHGfuD-ydGtg_E74</span>
-            <button class="copy-btn" onclick="copyAddress()">📋 Copy</button>
+            <div class="contract-label">
+              <i class="fas fa-link"></i>
+              <span>Contract Address</span>
+            </div>
+            <div class="contract-value">
+              <code class="address">EQCHGfuD-j40y6KxTmyCC4ultuz0K3PEvgRnr8UydGtg_E74</code>
+              <button class="copy-btn" onclick="copyAddress()">
+                <i class="fas fa-copy"></i>
+                <span>Copy</span>
+              </button>
+            </div>
           </div>
           <div class="contract-item">
-            <span class="label">Blockchain:</span>
-            <span class="value">TON Chain</span>
+            <div class="contract-label">
+              <i class="fas fa-link"></i>
+              <span>Blockchain</span>
+            </div>
+            <div class="contract-value">
+              <span class="value">TON Chain</span>
+            </div>
           </div>
           <div class="contract-item">
-            <span class="label">Tax:</span>
-            <span class="value">0%</span>
+            <div class="contract-label">
+              <i class="fas fa-percentage"></i>
+              <span>Tax</span>
+            </div>
+            <div class="contract-value">
+              <span class="value">0% (Diamond Hands Only!)</span>
+            </div>
           </div>
         </div>
       </div>
       
       <div class="community-buttons">
-        <a href="https://t.me/toniomeme" class="btn community-btn">
-          <span class="btn-icon">💬</span>
-          <span class="btn-text">Join Telegram</span>
+        <a href="https://t.me/toniomeme" class="btn btn-primary community-btn">
+          <i class="fab fa-telegram"></i>
+          <span>Join Telegram</span>
         </a>
-        <a href="https://x.com/toniomeme" class="btn community-btn">
-          <span class="btn-icon">🐦</span>
-          <span class="btn-text">Follow on Twitter</span>
+        <a href="https://x.com/toniomeme" class="btn btn-secondary community-btn">
+          <i class="fab fa-twitter"></i>
+          <span>Follow on Twitter</span>
         </a>
       </div>
     </section>
@@ -165,8 +275,15 @@
   </div>
 
   <footer>
-    <p>Made with ❤️ and lots of memes for the TON community. Tonio © 2025</p>
-    <p class="footer-fun">P.S. If you're reading this, you're awesome! 🎉</p>
+    <div class="footer-content">
+      <div class="footer-main">
+        <p>Made with <i class="fas fa-heart"></i> and lots of memes for the TON community</p>
+        <p class="footer-brand">Tonio © 2025</p>
+      </div>
+      <div class="footer-fun">
+        <p>P.S. If you're reading this, you're absolutely awesome! <i class="fas fa-star"></i></p>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>

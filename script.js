@@ -21,7 +21,6 @@ function initLoader() {
 // Initialize loader when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   initLoader();
-  setupParticles();
   setupEventListeners();
   loadMemeGallery();
   
@@ -29,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const tonio = document.querySelector('#tonio-mascot');
 if (tonio) {
   tonio.addEventListener('mouseenter', () => {
-    tonio.style.transition = 'transform 0.2s';
-    tonio.style.transform = 'rotate(-10deg) scale(1.08)';
+    tonio.style.transition = 'transform 0.3s ease';
+    tonio.style.transform = 'rotate(-5deg) scale(1.05)';
   });
   tonio.addEventListener('mouseleave', () => {
     tonio.style.transform = 'rotate(0deg) scale(1)';
@@ -49,33 +48,6 @@ window.addEventListener('load', () => {
   }
 });
 
-// Background Particles
-function setupParticles() {
-  const particlesContainer = document.getElementById('particles');
-  const particleCount = 20;
-  
-  for (let i = 0; i < particleCount; i++) {
-    createParticle(particlesContainer);
-  }
-}
-
-function createParticle(container) {
-  const particle = document.createElement('div');
-  particle.className = 'particle';
-  
-  const size = Math.random() * 10 + 5;
-  const x = Math.random() * window.innerWidth;
-  const y = Math.random() * window.innerHeight;
-  const delay = Math.random() * 6;
-  
-  particle.style.width = size + 'px';
-  particle.style.height = size + 'px';
-  particle.style.left = x + 'px';
-  particle.style.top = y + 'px';
-  particle.style.animationDelay = delay + 's';
-  
-  container.appendChild(particle);
-}
 
 // Event Listeners
 function setupEventListeners() {
@@ -270,14 +242,14 @@ function showCopySuccess() {
   const copyBtn = document.querySelector('.copy-btn');
   const originalText = copyBtn.innerHTML;
   
-  copyBtn.innerHTML = '✅ Copied!';
-  copyBtn.style.background = '#00ff00';
-  copyBtn.style.color = '#000';
+  copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+  copyBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+  copyBtn.style.color = '#fff';
   
   setTimeout(() => {
     copyBtn.innerHTML = originalText;
-    copyBtn.style.background = '#1da1f2';
-    copyBtn.style.color = '#fff';
+    copyBtn.style.background = '';
+    copyBtn.style.color = '';
   }, 2000);
 }
 
