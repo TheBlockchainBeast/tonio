@@ -96,6 +96,81 @@
   <!-- Main Content -->
   <main>
 
+    <!-- Price Chart Section -->
+    <section class="chart-section">
+      <div class="section-header">
+        <div class="section-badge">
+          <i class="fas fa-chart-line"></i>
+          <span>Live Price Chart</span>
+        </div>
+        <h2 class="section-title">
+          Tonio Token <span class="gradient-text">Price Action</span>
+        </h2>
+        <p class="section-description">
+          Track Tonio's epic journey in real-time! See the chaos, the pumps, and the diamond hands in action! 🚀
+        </p>
+      </div>
+      
+      <div class="chart-container">
+        <div class="chart-wrapper">
+          <iframe 
+            src="https://dexscreener.com/ton/EQCHGfuD-j40y6KxTmyCC4ultuz0K3PEvgRnr8UydGtg_E74?embed=1&theme=dark&trades=0&info=0"
+            title="Tonio Token Chart"
+            class="dex-chart"
+            frameborder="0">
+          </iframe>
+        </div>
+        
+        <div class="chart-info">
+          <div class="chart-stats">
+            <div class="stat-card contract-card" onclick="copyContractAddress()">
+              <div class="stat-icon">
+                <i class="fas fa-coins"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Contract</span>
+                <span class="stat-value contract-address">EQCHG...E74</span>
+                <span class="copy-hint">Click to copy</span>
+              </div>
+              <div class="copy-icon">
+                <i class="fas fa-copy"></i>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Network</span>
+                <span class="stat-value">TON Chain</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-percentage"></i>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Tax</span>
+                <span class="stat-value">0%</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chart-actions">
+            <a href="https://dexscreener.com/ton/EQCHGfuD-j40y6KxTmyCC4ultuz0K3PEvgRnr8UydGtg_E74" 
+               target="_blank" 
+               class="btn btn-primary">
+              <i class="fas fa-external-link-alt"></i>
+              <span>View on DexScreener</span>
+            </a>
+            <button onclick="refreshChart()" class="btn btn-secondary">
+              <i class="fas fa-sync-alt"></i>
+              <span>Refresh Chart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Meme Gallery -->
     <section class="meme-section">
@@ -176,47 +251,6 @@
           Be part of the most entertaining, chaotic, and absolutely legendary crypto community ever!
           <br>Where memes meet money and magic happens! 🚀
         </p>
-      </div>
-      
-      <!-- Contract Info -->
-      <div class="contract-info">
-        <div class="contract-header">
-          <i class="fas fa-file-contract"></i>
-          <h3>Contract Details</h3>
-        </div>
-        <div class="contract-details">
-          <div class="contract-item">
-            <div class="contract-label">
-              <i class="fas fa-link"></i>
-              <span>Contract Address</span>
-            </div>
-            <div class="contract-value">
-              <code class="address">EQCHGfuD-j40y6KxTmyCC4ultuz0K3PEvgRnr8UydGtg_E74</code>
-              <button class="copy-btn" onclick="copyAddress()">
-                <i class="fas fa-copy"></i>
-                <span>Copy</span>
-              </button>
-            </div>
-          </div>
-          <div class="contract-item">
-            <div class="contract-label">
-              <i class="fas fa-link"></i>
-              <span>Blockchain</span>
-            </div>
-            <div class="contract-value">
-              <span class="value">TON Chain</span>
-            </div>
-          </div>
-          <div class="contract-item">
-            <div class="contract-label">
-              <i class="fas fa-percentage"></i>
-              <span>Tax</span>
-            </div>
-            <div class="contract-value">
-              <span class="value">0% (Diamond Hands Only!)</span>
-            </div>
-          </div>
-        </div>
       </div>
       
       <div class="community-buttons">

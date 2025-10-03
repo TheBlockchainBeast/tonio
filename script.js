@@ -202,6 +202,86 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Chart refresh function
+function refreshChart() {
+  const chartIframe = document.querySelector('.dex-chart');
+  if (chartIframe) {
+    // Add a small delay to show the refresh animation
+    chartIframe.style.opacity = '0.5';
+    chartIframe.style.transition = 'opacity 0.3s ease';
+    
+    setTimeout(() => {
+      // Reload the iframe by changing its src
+      const currentSrc = chartIframe.src;
+      chartIframe.src = '';
+      setTimeout(() => {
+        chartIframe.src = currentSrc;
+        chartIframe.style.opacity = '1';
+      }, 100);
+    }, 300);
+  }
+}
+
+// Copy contract address from chart section
+function copyContractAddress() {
+  const address = 'EQCHGfuD-j40y6KxTmyCC4ultuz0K3PEvgRnr8UydGtg_E74';
+  
+  // Try to use the modern clipboard API
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(address).then(() => {
+      showContractCopySuccess();
+    }).catch(() => {
+      fallbackCopyContract(address);
+    });
+  } else {
+    fallbackCopyContract(address);
+  }
+}
+
+function fallbackCopyContract(text) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.style.position = 'fixed';
+  textArea.style.left = '-999999px';
+  textArea.style.top = '-999999px';
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    document.execCommand('copy');
+    showContractCopySuccess();
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+  
+  document.body.removeChild(textArea);
+}
+
+function showContractCopySuccess() {
+  const contractCard = document.querySelector('.contract-card');
+  const contractAddress = document.querySelector('.contract-address');
+  const copyIcon = contractCard.querySelector('.copy-icon i');
+  const originalText = contractAddress.textContent;
+  const originalIcon = copyIcon.className;
+  
+  // Show success state
+  contractAddress.textContent = 'Copied!';
+  contractAddress.style.color = 'var(--success)';
+  copyIcon.className = 'fas fa-check';
+  contractCard.style.borderColor = 'var(--success)';
+  contractCard.style.boxShadow = '0 0 20px rgba(16, 185, 129, 0.3)';
+  
+  // Reset after 2 seconds
+  setTimeout(() => {
+    contractAddress.textContent = originalText;
+    contractAddress.style.color = '';
+    copyIcon.className = originalIcon;
+    contractCard.style.borderColor = '';
+    contractCard.style.boxShadow = '';
+  }, 2000);
+}
+
 // Copy contract address function
 function copyAddress() {
   const address = 'EQCHGfuD-j40y6KxTmyCC4ultuz0K3PEvgRnr8UydGtg_E74';
